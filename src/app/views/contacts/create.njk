@@ -1,0 +1,17 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<form class="card" method="POST" action="/contacts">
+    <section class="details">
+    
+        <div class="return_button"><a href="/contacts">Retornar</a></div>
+
+        <h3>Novo Contato</h3>
+
+        {% include 'contacts/fields.njk' %}
+
+    </section>
+</form>
+
+{% endblock content %}

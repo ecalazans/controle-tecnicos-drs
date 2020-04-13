@@ -1,0 +1,10 @@
+<script>
+//=== Deletar elemento das páginas -> edit===
+const deleteButton = document.querySelector("#form-delete")
+deleteButton.addEventListener("click", function (event) {
+    const confirmDelete = confirm("Deseja realmente deletar?");
+    if (!confirmDelete) {
+        event.preventDefault();
+    }
+});
+</script>

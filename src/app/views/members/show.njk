@@ -1,0 +1,50 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+
+        <section class="details">
+        
+        <div class="return_button"><a href="/members">Retornar</a></div>
+
+            <h3>Detalhes</h3>
+
+            <div class="item">
+                <div>Nome</div>
+                <div>{{ member.name }}</div>
+            </div>
+
+            <div class="item">
+                <div>Unidade</div>
+                <div>{{ member.unity }}</div>
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>{{ member.email }}</div>
+            </div>
+
+            <div class="item">
+                <div>Unidade DRS</div>
+                <div>{{ member.regional }}</div>
+            </div>
+
+            <div class="item">
+                <div>Técnico Local</div>
+                <div>{{ member.contact_name }}</div>
+            </div>
+
+            <div class="item">
+                <div>Contato</div>
+                <div>
+                    <span>{{ member.contact }}</span>
+                </div>
+            </div>
+
+            <a href="/members/{{ member.id }}/edit" class="button">Editar</a>
+
+        </section>
+    </div>
+
+{% endblock content %}

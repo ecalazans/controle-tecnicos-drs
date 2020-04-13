@@ -1,0 +1,59 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="title-content">
+        <h1>Lista dos técnicos</h1>
+        <p>Sua lista de contatos dos técnicos locais</p>
+    </div>
+
+    <div class="card table-container">
+
+        <div class="header">
+            <a class="button" href="/contacts/create">Novo</a>
+            <form action="/contacts" method="GET">
+                <input 
+                    type="text"
+                    name="filter"
+                    placeholder="Filtra por nome"
+                    value="{{ filter }}"
+                    >
+
+                    <button type="submit">Filtrar</button>
+            </form>
+        </div>
+
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>USER</th>
+                    <th>E-MAIL</th>
+                    <th>REGIONAIS</th>
+                    <th>AÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td>
+                        <span style="background-image url({{contact.avatar_url}})"></span>
+                        {{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.total_drs }}</td>
+                    <td><a href="/contacts/{{ contact.id }}">Ver</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        ></div>
+
+    </div>
+
+    <script src="/scripts.js"></script>
+
+{% endblock %}

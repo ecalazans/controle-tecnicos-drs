@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="title-content">
+        <h1>Lista das DRS</h1>
+        <p>Sua lista de contatos da DRS</p>
+    </div>
+
+    <div class="card table-container">
+
+    <div class="header">
+            <a class="button" href="/members/create">Novo</a>
+            <form action="/members" method="GET">
+                <input 
+                    type="text"
+                    name="filter"
+                    placeholder="Filtrar por Unidade"
+                    value="{{ filter }}"
+                    >
+
+                    <button type="submit">Filtrar</button>
+            </form>
+        </div>
+        
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>UNIDADE</th>
+                    <th>DRS</th>
+                    <th>TÉCNICO SES</th>
+                    <th>AÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members%}
+                <tr>
+                    <td>
+                        <span style="background-image url({{member.avatar_url}})"></span>
+                        {{ member.unity }}</td>
+                    <td>{{ member.regional }}</td>
+                    <td>{{ member.contact_name }}</td>  
+                    <td><a href="/members/{{ member.id }}">Ver</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        ></div>
+    </div>
+
+    <script src="/scripts.js"></script>
+
+{% endblock %}

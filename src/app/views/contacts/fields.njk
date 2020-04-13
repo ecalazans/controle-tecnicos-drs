@@ -1,0 +1,61 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="text"
+            name="avatar_url"
+            placeholder="Insira sua imagem"
+            value="{{ contact.avatar_url }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome</div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            placeholder="Digite seu nome"
+            value="{{ contact.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Unidade</div>
+    <div>
+        <input 
+            type="text"
+            name="unity"
+            placeholder="Informe sua unidade"
+            value="{{ contact.unity }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>E-mail</div>
+    <div>
+        <input 
+            type="email"
+            name="email"
+            placeholder="Digite seu e-mail"
+            value="{{ contact.email }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Contato</div>
+    <div>
+        <input 
+            type="text"
+            name="contact"
+            placeholder="Digite um número de contato válido"
+            value="{{ contact.contact }}"
+        >
+    </div>
+</div>
+
+<button type="submit">Salvar</button>

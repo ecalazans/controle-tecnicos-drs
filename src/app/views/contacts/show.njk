@@ -1,0 +1,40 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+
+        <section class="details">
+        
+        <div class="return_button"><a href="/contacts">Retornar</a></div>
+
+            <h3>Detalhes</h3>
+
+            <div class="item">
+                <div>Nome</div>
+                <div>{{ contact.name }}</div>
+            </div>
+
+            <div class="item">
+                <div>Unidade</div>
+                <div>{{ contact.unity }}</div>
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>{{ contact.email }}</div>
+            </div>
+
+            <div class="item">
+                <div>Contato</div>
+                <div>
+                    <span>{{ contact.contact }}</span>
+                </div>
+            </div>
+
+            <a href="/contacts/{{ contact.id }}/edit" class="button">Editar</a>
+
+        </section>
+    </div>
+
+{% endblock content %}

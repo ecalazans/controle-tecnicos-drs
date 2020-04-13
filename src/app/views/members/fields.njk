@@ -1,0 +1,127 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="text"
+            name="avatar_url"
+            placeholder="Insira sua imagem"
+            value="{{ member.avatar_url }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome</div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            placeholder="Digite seu nome"
+            value="{{ member.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Unidade</div>
+    <div>
+        <input 
+            type="text"
+            name="unity"
+            placeholder="Informe sua unidade"
+            value="{{ member.unity }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>E-mail</div>
+    <div>
+        <input 
+            type="email"
+            name="email"
+            placeholder="Digite seu e-mail"
+            value="{{ member.email }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Contato</div>
+    <div>
+        <input 
+            type="text"
+            name="contact"
+            placeholder="Digite um número de contato válido"
+            value="{{ member.contact }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Regionais da Saúde - DRS</div>
+    <div>
+        <select name="regional">
+            <option value="I" {% if member.regional == "I" %}selected{% endif %}>
+                DRS I
+            </option>
+            <option value="II" {% if member.regional == "II" %}selected{% endif %}>
+                DRS II
+            </option>
+            <option value="III" {% if member.regional == "III" %}selected{% endif %}>
+                DRS III
+            </option>
+            <option value="IV" {% if member.regional == "IV" %}selected{% endif %}>
+                DRS IV
+            </option>
+            <option value="V" {% if member.regional == "V" %}selected{% endif %}>
+                DRS V
+            </option>
+            <option value="VI" {% if member.regional == "VI" %}selected{% endif %}>
+                DRS VI
+            </option>
+            <option value="VII" {% if member.regional == "VII" %}selected{% endif %}>
+                DRS VII
+            </option>
+            <option value="VIII" {% if member.regional == "VIII" %}selected{% endif %}>
+                DRS VIII
+            </option>
+            <option value="IX" {% if member.regional == "IX" %}selected{% endif %}>
+                DRS IX
+            </option>
+            <option value="X" {% if member.regional == "X" %}selected{% endif %}>
+                DRS X
+            </option>
+            <option value="XI" {% if member.regional == "XI" %}selected{% endif %}>
+                DRS XI
+            </option>
+            <option value="XII" {% if member.regional == "XII" %}selected{% endif %}>
+                DRS XII
+            </option>
+            <option value="XIII" {% if member.regional == "XIII" %}selected{% endif %}>
+                DRS XIII
+            </option>
+            <option value="XIV" {% if member.regional == "XIV" %}selected{% endif %}>
+                DRS XIV
+            </option>
+            <option value="XV" {% if member.regional == "XV" %}selected{% endif %}>
+                DRS XV
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Representante Local do DRS</div>
+    <div>
+        <select name="contact_tec">
+        {% for contact in contactOptions %}
+            <option value="{{ contact.id }}" {% if member.contact_id == contact.id %}selected{% endif %}>
+                {{ contact.name }}
+            </option>
+        {% endfor %}
+        </select>
+    </div>
+</div>
+
+<button type="submit">Salvar</button>

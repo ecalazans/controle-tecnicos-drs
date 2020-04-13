@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card">
+    <form method="POST" action="/contacts?_method=PUT">
+        <section class="details">
+
+            <div class="return_button"><a href="/contacts">Retornar</a></div>
+
+            <h3>Editar Contato</h3>
+
+            {% include 'contacts/fields.njk' %}
+
+            <input type="hidden" name="id" value="{{ contact.id }}">
+
+        </form>
+
+        <form id="form-delete" method="POST" action="/contacts?_method=DELETE">
+            <input type="hidden" name="id" value="{{ contact.id }}">
+            <button type="submit">Deletar</button>
+        </form>
+    </section>
+
+    {% include '../confirm.njk' %}
+
+</div>
+
+{% endblock content %}
