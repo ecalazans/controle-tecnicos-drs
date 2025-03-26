@@ -37,19 +37,19 @@ O objetivo deste sistema é facilitar o acompanhamento das tarefas e desempenho 
 
 2. Navegue até o diretório do projeto:
 
-  cd controle-tecnicos-drs
+    cd controle-tecnicos-drs
 
 
 3. Instale as dependências:
 
-  npm install
+    npm install
 
 
 4. Inicie o servidor:
 
-  npm start
+    npm start
 
-  O servidor será iniciado e, graças ao BrowserSync, a aplicação será aberta automaticamente no navegador padrão.
+    O servidor será iniciado e, graças ao BrowserSync, a aplicação será aberta automaticamente no navegador padrão.
 
 
 ## Estrutura do Projeto
